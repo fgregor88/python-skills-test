@@ -6,10 +6,10 @@ from typing import List
 
 from evaluator import AttemptResult, evaluate_solution
 from persistence import SessionSummary, save_session
-from problems import Problem, get_initial_problem
+from problems import PROBLEM_SEQUENCE, Problem, get_problem_for_index
 
 
-MAX_PROBLEMS = 5
+MAX_PROBLEMS = len(PROBLEM_SEQUENCE)
 SOLUTIONS_DIR = Path("solutions")
 
 
@@ -59,8 +59,7 @@ def run_session() -> None:
     stopped_early = False
 
     for index in range(MAX_PROBLEMS):
-        # For now we always return the same initial problem; later we will adapt.
-        problem = get_initial_problem()
+        problem = get_problem_for_index(index)
         print(f"\n=== Problem {index + 1}/{MAX_PROBLEMS} ===")
 
         user_code = _get_user_code_from_file(problem)
