@@ -1,0 +1,5 @@
+#
+# Requirements for the Python skills test application.
+# For now we rely only on the Python standard library.
+#
+
