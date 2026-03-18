@@ -6,10 +6,10 @@ from typing import List
 
 from evaluator import AttemptResult, evaluate_solution
 from persistence import SessionSummary, save_session
-from problems import PROBLEM_SEQUENCE, Problem, get_problem_for_index
+from problems import Problem, get_problem_for_index
 
 
-MAX_PROBLEMS = len(PROBLEM_SEQUENCE)
+MAX_PROBLEMS = 5
 SOLUTIONS_DIR = Path("solutions")
 
 
